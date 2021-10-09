@@ -1,29 +1,40 @@
 package com.theapache64.leancorn.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.theapache64.leancorn.databinding.FragmentHomeBinding
+import androidx.fragment.app.viewModels
+import androidx.leanback.app.BrowseSupportFragment
+import androidx.lifecycle.asLiveData
+import com.theapache64.leancorn.util.Resource
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class HomeFragment : Fragment() {
+@AndroidEntryPoint
+class HomeFragment : BrowseSupportFragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        val binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    private val viewModel: HomeViewModel by viewModels()
 
     companion object {
         fun newInstance() = HomeFragment()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.moviesResponse.asLiveData().observe(viewLifecycleOwner) { resource ->
+            when (resource) {
+                is Resource.Idle -> {
+
+                }
+                is Resource.Loading -> {
+
+                }
+                is Resource.Success -> {
+                    println("Working: ${resource.data}")
+                }
+                is Resource.Error -> TODO()
+            }
+        }
+
     }
 }
