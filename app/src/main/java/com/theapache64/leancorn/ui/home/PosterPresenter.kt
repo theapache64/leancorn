@@ -34,8 +34,8 @@ class PosterPresenter : Presenter() {
                 uri = movie.imageUrl,
                 builder = {
                     scale(Scale.FIT)
-                    placeholder(R.drawable.ic_loading)
                     size(posterWidth, posterHeight)
+                    allowHardware(false)
                 })
             titleText = movie.name
         }

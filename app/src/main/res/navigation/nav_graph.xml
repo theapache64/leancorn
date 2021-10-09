@@ -14,6 +14,21 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.theapache64.leancorn.ui.home.HomeFragment" />
+        android:name="com.theapache64.leancorn.ui.home.HomeFragment">
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="com.theapache64.leancorn.ui.detail.DetailFragment">
+        <argument
+            android:name="category"
+            app:argType="com.theapache64.leancorn.data.local.Category" />
+        <argument
+            android:name="movie"
+            app:argType="com.theapache64.leancorn.data.remote.Movie" />
+    </fragment>
 
 </navigation>

@@ -1,9 +1,13 @@
 package com.theapache64.leancorn.data.remote
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.IgnoredOnParcel
+import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class Movie(
     @Json(name = "actors")
     val actors: List<String>,
@@ -25,4 +29,7 @@ data class Movie(
     val thumbUrl: String, // https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL__QL50.jpg
     @Json(name = "year")
     val year: Int? // 1957
-)
+) : Parcelable {
+    @IgnoredOnParcel
+    var categoryId: Long = -1
+}

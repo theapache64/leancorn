@@ -83,6 +83,20 @@
     "name": "Glide",
     "description": "A fast and efficient image loading library for Android focused on smooth scrolling."
    }
+  },
+  {
+   "id": 7,
+   "type": "implementation",
+   "installed_name": "palette",
+   "gpm_dep": {
+    "artifact_id": "palette",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.palette/palette",
+    "get_from": "Google",
+    "group_id": "androidx.palette",
+    "name": "Android Support Palette V7",
+    "description": "Android Support Palette v7"
+   }
   }
  ]
 }

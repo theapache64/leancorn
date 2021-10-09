@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
@@ -66,4 +67,7 @@ dependencies {
 
     // Coil : An image loading library for Android backed by Kotlin Coroutines.
     implementation 'io.coil-kt:coil:1.4.0'
+
+    // Android Support Palette V7 : Android Support Palette v7
+    implementation 'androidx.palette:palette:1.0.0'
 }

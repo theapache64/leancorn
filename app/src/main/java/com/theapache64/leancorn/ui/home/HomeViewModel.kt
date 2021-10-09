@@ -5,9 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.theapache64.leancorn.data.local.Category
 import com.theapache64.leancorn.data.remote.Movie
 import com.theapache64.leancorn.data.repo.MoviesRepo
+import com.theapache64.leancorn.ui.detail.DetailFragmentArgs
 import com.theapache64.leancorn.util.Resource
+import com.theapache64.leancorn.util.flow.mutableEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -19,6 +22,9 @@ class HomeViewModel @Inject constructor(
     private val _moviesResponse =
         MutableStateFlow<Resource<List<Category>>>(Resource.Idle())
     val moviesResponse = _moviesResponse.asStateFlow()
+
+    private val _navigateToDetail = mutableEventFlow<DetailFragmentArgs>()
+    val navigateToDetail = _navigateToDetail.asSharedFlow()
 
     init {
         loadMovies()
@@ -37,7 +43,7 @@ class HomeViewModel @Inject constructor(
     /**
      * To convert movie list to categorized feed
      */
-    fun List<Movie>.categorize(): List<Category> {
+    private fun List<Movie>.categorize(): List<Category> {
         val genreSet = mutableSetOf<String>()
         for (movie in this) {
             for (genre in movie.genre) {
@@ -46,15 +52,32 @@ class HomeViewModel @Inject constructor(
         }
         val feedItems = mutableListOf<Category>()
         for ((index, genre) in genreSet.withIndex()) {
+            val categoryId = index.toLong()
+            // TODO: Optimize
             val genreMovies = this.filter { it.genre.contains(genre) }
+                .map { movie -> movie.copy().apply { this.categoryId = categoryId } }
+                .shuffled()
+
             feedItems.add(
                 Category(
-                    index.toLong(),
+                    categoryId,
                     genre,
                     genreMovies
                 )
             )
         }
         return feedItems
+    }
+
+    fun onMovieClicked(movie: Movie) {
+        if (moviesResponse.value is Resource.Success) {
+            val clickedCategory = (moviesResponse.value as Resource.Success<List<Category>>).data
+                .find { it.id == movie.categoryId }!!
+
+            // Navigating to detail
+            _navigateToDetail.tryEmit(
+                DetailFragmentArgs(clickedCategory, movie)
+            )
+        }
     }
 }
