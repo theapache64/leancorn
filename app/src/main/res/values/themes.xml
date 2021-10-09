@@ -1,6 +1,5 @@
 <resources>
-
     <style name="Theme.Leancorn" parent="@style/Theme.Leanback">
-
+        <item name="android:colorBackground">@color/cod_gray</item>
     </style>
 </resources>
