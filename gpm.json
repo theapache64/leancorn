@@ -55,6 +55,34 @@
     "name": "LiveData Kotlin Extensions",
     "description": "Kotlin extensions for 'livedata' artifact"
    }
+  },
+  {
+   "id": 5,
+   "type": "implementation",
+   "installed_name": "coil",
+   "gpm_dep": {
+    "artifact_id": "coil",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/io.coil-kt/coil",
+    "get_from": "Central",
+    "group_id": "io.coil-kt",
+    "name": "Coil",
+    "description": "An image loading library for Android backed by Kotlin Coroutines."
+   }
+  },
+  {
+   "id": 6,
+   "type": "implementation",
+   "installed_name": "glide",
+   "gpm_dep": {
+    "artifact_id": "glide",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/com.github.bumptech.glide/glide",
+    "get_from": "Central",
+    "group_id": "com.github.bumptech.glide",
+    "name": "Glide",
+    "description": "A fast and efficient image loading library for Android focused on smooth scrolling."
+   }
   }
  ]
 }

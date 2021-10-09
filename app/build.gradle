@@ -63,4 +63,7 @@ dependencies {
 
     // LiveData Kotlin Extensions : Kotlin extensions for 'livedata' artifact
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-rc01'
+
+    // Coil : An image loading library for Android backed by Kotlin Coroutines.
+    implementation 'io.coil-kt:coil:1.4.0'
 }
