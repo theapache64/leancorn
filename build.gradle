@@ -2,7 +2,7 @@
 buildscript {
     ext {
         hilt_version = '2.39.1'
-        nav_version = '2.3.5'
+        nav_version = '2.4.0-alpha10'
     }
     repositories {
         google()
