@@ -1,4 +1,7 @@
 <resources>
 
-    <style name="Theme.Leancorn" parent="@style/Theme.Leanback" />
+    <style name="Theme.Leancorn" parent="@style/Theme.Leanback">
+        <item name="android:background">@color/cod_gray</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>

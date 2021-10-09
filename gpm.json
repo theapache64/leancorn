@@ -27,6 +27,34 @@
     "name": "Moshi",
     "description": "A modern JSON API for Android and Java"
    }
+  },
+  {
+   "id": 3,
+   "type": "implementation",
+   "installed_name": "coroutines-core",
+   "gpm_dep": {
+    "artifact_id": "kotlinx-coroutines-core",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core",
+    "get_from": "Central",
+    "group_id": "org.jetbrains.kotlinx",
+    "name": "Kotlinx Coroutines Core",
+    "description": "Coroutines support libraries for Kotlin"
+   }
+  },
+  {
+   "id": 4,
+   "type": "implementation",
+   "installed_name": "livedata-ktx",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-livedata-ktx",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata-ktx",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "LiveData Kotlin Extensions",
+    "description": "Kotlin extensions for 'livedata' artifact"
+   }
   }
  ]
 }

@@ -6,6 +6,14 @@
 
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="com.theapache64.leancorn.ui.splash.SplashFragment" />
+        android:name="com.theapache64.leancorn.ui.splash.SplashFragment">
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.theapache64.leancorn.ui.home.HomeFragment" />
 
 </navigation>

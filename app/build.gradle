@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -37,9 +38,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    // Navigation
-    def nav_version = "2.3.5"
-
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
@@ -55,4 +53,14 @@ dependencies {
     // Moshi : A modern JSON API for Android and Java
     implementation 'com.squareup.moshi:moshi:1.12.0'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.12.0'
+
+    // Calligraphy
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+
+    // Kotlinx Coroutines Core : Coroutines support libraries for Kotlin
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+
+    // LiveData Kotlin Extensions : Kotlin extensions for 'livedata' artifact
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-rc01'
 }
