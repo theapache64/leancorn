@@ -27,6 +27,7 @@ https://user-images.githubusercontent.com/9678279/136692210-10e10e65-c7eb-4c31-9
 
 ## ☑️ TODO
 
+- [ ] Create logo and banner for launcher
 - [ ] Write unit tests
 - [ ] Write UI tests
 - [ ] Implement room cache (can avoid passing categories and movies to detail)
