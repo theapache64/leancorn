@@ -76,13 +76,14 @@ class HomeFragment : BrowseSupportFragment() {
     }
 
     private fun setDynamicBackground() {
-        setOnItemViewSelectedListener { itemViewHolder, item, rowViewHolder, row ->
+        setOnItemViewSelectedListener { itemViewHolder, _, _, _ ->
             if (itemViewHolder?.view != null) {
                 val bitmapDrawable =
                     (itemViewHolder.view as ImageCardView).mainImageView.drawable as? BitmapDrawable
                 if (bitmapDrawable != null) {
                     Palette.from(bitmapDrawable.bitmap).generate { palette ->
-                        palette?.darkVibrantSwatch?.let { swatch ->
+                        // Priority for vibrantSwatch, if not available dominantSwatch
+                        (palette?.vibrantSwatch ?: palette?.dominantSwatch)?.let { swatch ->
                             backgroundManager.color = swatch.rgb
                         }
                     }

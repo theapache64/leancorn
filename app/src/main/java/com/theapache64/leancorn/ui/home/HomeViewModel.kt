@@ -56,7 +56,7 @@ class HomeViewModel @Inject constructor(
             // TODO: Optimize
             val genreMovies = this.filter { it.genre.contains(genre) }
                 .map { movie -> movie.copy().apply { this.categoryId = categoryId } }
-                .shuffled()
+                .sortedByDescending { it.year ?: 0 }
 
             feedItems.add(
                 Category(
