@@ -69,15 +69,26 @@ class HomeViewModel @Inject constructor(
         return feedItems
     }
 
+    var scrollPos: Pair<Int, Int>? = null
     fun onMovieClicked(movie: Movie) {
         if (moviesResponse.value is Resource.Success) {
-            val clickedCategory = (moviesResponse.value as Resource.Success<List<Category>>).data
-                .find { it.id == movie.categoryId }!!
+            val categories = (moviesResponse.value as Resource.Success<List<Category>>).data
+            val clickedCategory = categories.find { it.id == movie.categoryId }!!
 
             // Navigating to detail
             _navigateToDetail.tryEmit(
                 DetailFragmentArgs(clickedCategory, movie)
             )
+
+            // Find category position and movie position
+            val catPos = categories.indexOf(clickedCategory)
+            val moviePos = clickedCategory.movies.indexOf(movie)
+
+            scrollPos = Pair(catPos, moviePos)
         }
+    }
+
+    fun resetScrollPos() {
+        scrollPos = null
     }
 }

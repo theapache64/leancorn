@@ -49,6 +49,7 @@ class HomeFragment : BrowseSupportFragment() {
         setDynamicBackground()
     }
 
+
     private fun observeData() {
         viewModel.moviesResponse.asLiveData().observe(viewLifecycleOwner) { resource ->
             when (resource) {
@@ -103,5 +104,15 @@ class HomeFragment : BrowseSupportFragment() {
             adapter.add(ListRow(headerItem, rowAdapter))
         }
         this.adapter = adapter
+
+        // Scrolling to row/column
+        viewModel.scrollPos?.let { (catPos, moviePos) ->
+            rowsSupportFragment.setSelectedPosition(
+                catPos,
+                true,
+                ListRowPresenter.SelectItemViewHolderTask(moviePos)
+            )
+            viewModel.resetScrollPos()
+        }
     }
 }
