@@ -29,6 +29,11 @@
         <argument
             android:name="movie"
             app:argType="com.theapache64.leancorn.data.remote.Movie" />
+
+        <!--For more like this navigation-->
+        <action
+            android:id="@+id/action_detail_to_detail"
+            app:destination="@id/detail_fragment" />
     </fragment>
 
 </navigation>

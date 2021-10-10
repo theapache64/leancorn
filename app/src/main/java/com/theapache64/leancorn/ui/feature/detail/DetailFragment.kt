@@ -8,9 +8,12 @@ import androidx.leanback.app.DetailsSupportFragment
 import androidx.leanback.widget.*
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import coil.imageLoader
 import coil.request.ImageRequest
 import com.theapache64.leancorn.R
+import com.theapache64.leancorn.data.remote.Movie
+import com.theapache64.leancorn.ui.feature.home.HomeFragmentDirections
 import com.theapache64.leancorn.ui.feature.home.PosterPresenter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -37,13 +40,28 @@ class DetailFragment : DetailsSupportFragment() {
             Toast.makeText(requireContext(), stringRes, Toast.LENGTH_SHORT).show()
         }
 
+        viewModel.navigateToDetail.asLiveData().observe(viewLifecycleOwner) {
+            findNavController().navigate(
+                DetailFragmentDirections.actionDetailToDetail(
+                    it.category,
+                    it.movie
+                )
+            )
+        }
+
         setOnItemViewClickedListener { _, item, _, _ ->
-            if (item is Action) {
-                when (item.id) {
-                    ACTION_PLAY -> {
-                        viewModel.onPlayClicked()
+            when (item) {
+                is Action -> {
+                    when (item.id) {
+                        ACTION_PLAY -> {
+                            viewModel.onPlayClicked()
+                        }
+                        else -> error("Undefined action")
                     }
-                    else -> error("Undefined action")
+                }
+
+                is Movie -> {
+                    viewModel.onMovieClicked(item)
                 }
             }
         }
