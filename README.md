@@ -11,7 +11,9 @@
 > A simple movie app using Leanback
 
 ## 🎥 Demo
-![](demo.mp4)
+
+https://user-images.githubusercontent.com/9678279/136692210-10e10e65-c7eb-4c31-9435-7432ba2943c4.mp4
+
 
 ## 👨🏽‍💻 Tech Stack
 
