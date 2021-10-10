@@ -1,8 +1,9 @@
-package com.theapache64.leancorn.ui.detail
+package com.theapache64.leancorn.ui.feature.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.leanback.widget.Presenter
+import com.theapache64.leancorn.R
 import com.theapache64.leancorn.data.remote.Movie
 import com.theapache64.leancorn.databinding.DetailMetaBinding
 
@@ -19,7 +20,17 @@ class DetailPresenter : Presenter() {
         val movie = item as Movie
         val binding = viewHolder.view.tag as DetailMetaBinding
         with(binding) {
-            tvDesc.text = movie.desc
+            mivPlot.setData(R.string.detail_label_plot, movie.desc)
+            mivRating.setData(R.string.detail_label_rating, movie.rating.toString())
+            mivYear.setData(R.string.detail_label_year, movie.year.toString())
+            mivActors.setData(
+                R.string.detail_label_actors,
+                movie.actors.joinToString(separator = ",")
+            )
+            mivDirector.setData(
+                R.string.detail_label_directors,
+                movie.directors.joinToString(separator = ",")
+            )
         }
     }
 

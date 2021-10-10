@@ -7,4 +7,7 @@
     <color name="default_background">#3d3d3d</color>
 
     <color name="cod_gray">#171717</color>
+    <color name="light_gray">#555555</color>
+
+
 </resources>

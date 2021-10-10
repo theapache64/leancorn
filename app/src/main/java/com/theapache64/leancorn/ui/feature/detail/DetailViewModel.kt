@@ -1,4 +1,4 @@
-package com.theapache64.leancorn.ui.detail
+package com.theapache64.leancorn.ui.feature.detail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

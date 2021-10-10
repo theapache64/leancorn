@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="com.theapache64.leancorn.ui.splash.SplashFragment">
+        android:name="com.theapache64.leancorn.ui.feature.splash.SplashFragment">
         <action
             android:id="@+id/action_splash_to_home"
             app:destination="@id/home_fragment" />
@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.theapache64.leancorn.ui.home.HomeFragment">
+        android:name="com.theapache64.leancorn.ui.feature.home.HomeFragment">
         <action
             android:id="@+id/action_home_to_detail"
             app:destination="@id/detail_fragment" />
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/detail_fragment"
-        android:name="com.theapache64.leancorn.ui.detail.DetailFragment">
+        android:name="com.theapache64.leancorn.ui.feature.detail.DetailFragment">
         <argument
             android:name="category"
             app:argType="com.theapache64.leancorn.data.local.Category" />

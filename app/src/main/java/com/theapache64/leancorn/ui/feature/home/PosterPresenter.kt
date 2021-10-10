@@ -1,4 +1,4 @@
-package com.theapache64.leancorn.ui.home
+package com.theapache64.leancorn.ui.feature.home
 
 import android.view.ViewGroup
 import androidx.leanback.widget.BaseCardView

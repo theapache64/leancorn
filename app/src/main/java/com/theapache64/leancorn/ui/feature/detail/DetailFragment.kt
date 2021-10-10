@@ -1,4 +1,4 @@
-package com.theapache64.leancorn.ui.detail
+package com.theapache64.leancorn.ui.feature.detail
 
 import android.os.Bundle
 import android.view.View
@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import coil.imageLoader
 import coil.request.ImageRequest
 import com.theapache64.leancorn.R
-import com.theapache64.leancorn.ui.home.PosterPresenter
+import com.theapache64.leancorn.ui.feature.home.PosterPresenter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

@@ -1,4 +1,4 @@
-package com.theapache64.leancorn.ui.splash
+package com.theapache64.leancorn.ui.feature.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater

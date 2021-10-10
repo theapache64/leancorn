@@ -1,8 +1,7 @@
-package com.theapache64.leancorn.ui.splash
+package com.theapache64.leancorn.ui.feature.splash
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theapache64.leancorn.data.repo.MoviesRepo
 import com.theapache64.leancorn.util.flow.mutableEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay

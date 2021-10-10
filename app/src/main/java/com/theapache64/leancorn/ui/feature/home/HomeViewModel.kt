@@ -1,11 +1,11 @@
-package com.theapache64.leancorn.ui.home
+package com.theapache64.leancorn.ui.feature.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.theapache64.leancorn.data.local.Category
 import com.theapache64.leancorn.data.remote.Movie
 import com.theapache64.leancorn.data.repo.MoviesRepo
-import com.theapache64.leancorn.ui.detail.DetailFragmentArgs
+import com.theapache64.leancorn.ui.feature.detail.DetailFragmentArgs
 import com.theapache64.leancorn.util.Resource
 import com.theapache64.leancorn.util.flow.mutableEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel

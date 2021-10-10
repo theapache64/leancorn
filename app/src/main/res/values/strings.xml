@@ -21,4 +21,9 @@
     <string name="detail_header_more_like_this">More Like This</string>
     <string name="detail_action_play">🍿 PLAY</string>
     <string name="detail_tada">Tada! 🎉</string>
+    <string name="detail_label_plot">📝 Plot</string>
+    <string name="detail_label_rating">🌟Rating</string>
+    <string name="detail_label_actors">🎭 Actors</string>
+    <string name="detail_label_directors">🙌🏻 Directors</string>
+    <string name="detail_label_year">🗓 Year</string>
 </resources>
