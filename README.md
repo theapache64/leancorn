@@ -10,7 +10,26 @@
 
 > A simple movie app using Leanback
 
-Coming soon
+## 🎥 Demo
+![](demo.mp4)
+
+## 👨🏽‍💻 Tech Stack
+
+| What?| How? |
+|---|---|
+| Architecture  |MVVM|
+| Navigation  |Jetpack Navigation|
+| Networking  |Retrofit|
+| JSON Parsing  |Moshi|
+| Dependency Injection  |Hilt|
+| Image Loading |Coil|
+
+## 🧾 TODO
+
+- [ ] Write unit tests
+- [ ] Write UI tests
+- [ ] Implement room cache (can avoid passing categories and movies to detail)
+- [ ] Code refactor
 
 ## ✍️ Author
 
