@@ -2,7 +2,6 @@
 
 # leancorn
 
-![buildStatus](https://img.shields.io/github/workflow/status/theapache64/leancorn/Java%20CI%20with%20Gradle?style=plastic)
 ![latestVersion](https://img.shields.io/github/v/release/theapache64/leancorn)
 <a href="https://twitter.com/theapache64" target="_blank">
 <img alt="Twitter: theapache64" src="https://img.shields.io/twitter/follow/theapache64.svg?style=social" />
@@ -17,16 +16,16 @@ https://user-images.githubusercontent.com/9678279/136692210-10e10e65-c7eb-4c31-9
 
 ## 👨🏽‍💻 Tech Stack
 
-| What?| How? |
-|---|---|
-| Architecture  |MVVM|
-| Navigation  |Jetpack Navigation|
-| Networking  |Retrofit|
-| JSON Parsing  |Moshi|
-| Dependency Injection  |Hilt|
-| Image Loading |Coil|
+| What?                | How?               |
+|:---------------------|:-------------------|
+| Architecture         | MVVM               |
+| Navigation           | Jetpack Navigation |
+| Networking           | Retrofit           |
+| JSON Parsing         | Moshi              |
+| Dependency Injection | Hilt               |
+| Image Loading        | Coil               |
 
-## 🧾 TODO
+## ☑️ TODO
 
 - [ ] Write unit tests
 - [ ] Write UI tests
@@ -68,10 +67,6 @@ Give a ⭐️ if this project helped you!
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="160">
 </a>
 
-
-## ☑️ TODO
-
-- [ ] Task 1
 
 ## 📝 License
 
